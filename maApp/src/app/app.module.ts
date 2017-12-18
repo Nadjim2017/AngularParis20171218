@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { ItemsModule } from './items/items.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ItemsModule } from './items/items.module';
     SharedModule,
     HomeModule,
     PageNotFoundModule,
-    ItemsModule
+    ItemsModule,
+    NgbModule.forRoot()
   ],
   declarations: [
     AppComponent
