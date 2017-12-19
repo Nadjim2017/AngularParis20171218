@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { ItemComponent } from './components/item/item.component';
 import { ListeitemsComponent } from './containers/listeitems/listeitems.component';
+import { AddComponent } from './containers/add/add.component';
 
 
 @NgModule({
@@ -10,10 +11,11 @@ import { ListeitemsComponent } from './containers/listeitems/listeitems.componen
     CommonModule,
     SharedModule
   ],
-  declarations: [ItemComponent, ListeitemsComponent],
+  declarations: [ItemComponent, ListeitemsComponent, AddComponent],
   exports: [
     ItemComponent,
-    ListeitemsComponent
+    ListeitemsComponent,
+    AddComponent
   ]
 })
 export class ItemsModule { }
