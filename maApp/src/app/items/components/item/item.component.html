@@ -1,0 +1,17 @@
+<div class="container">
+<div class="card">
+  <div class="card">
+    <div class="card-header">
+      {{ item.state }}
+      <span class="state-0" *ngIf="state.ALIVRER === item.state"> A livrer </span>
+      <span class="state-1" *ngIf="state.ENCOURS === item.state"> En cours </span>
+      <span class="state-2" *ngIf="state.LIVREE === item.state"> livrée </span>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title"> {{ item.name }}</h4>
+      <p class="card-text"> {{ item.reference }}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+</div>
