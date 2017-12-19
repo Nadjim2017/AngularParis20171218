@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuComponent } from './components/menu/menu.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { StateDirective } from './directives/state/state.directive';
 
 
 @NgModule({
@@ -9,9 +10,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     NgbModule
   ],
-  declarations: [MenuComponent],
+  declarations: [MenuComponent, StateDirective],
   exports: [
-    MenuComponent
+    MenuComponent,
+    StateDirective
   ]
 })
 export class SharedModule { }
