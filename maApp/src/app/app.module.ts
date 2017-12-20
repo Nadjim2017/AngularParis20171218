@@ -12,8 +12,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CollectionService } from './core/service/collection/collection.service';
 
 import { AppRoutingModule } from './app-routing.module';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 import { RouterModule, Router } from '@angular/router';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { RouterModule, Router } from '@angular/router';
     NgbModule.forRoot(),
     AppRoutingModule,
     RouterModule,
-    PageNotFoundModule
+    PageNotFoundModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   declarations: [
     AppComponent

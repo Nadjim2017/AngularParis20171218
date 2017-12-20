@@ -1,6 +1,6 @@
 <div class="container">
-  <div *ngFor="let item of collection">
+  <ng-container *ngFor="let item of collection | async">
       <app-item [item]="item"></app-item>
-  </div>
+  </ng-container>
 
 </div>

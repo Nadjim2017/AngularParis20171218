@@ -10,6 +10,9 @@
     <div class="card-body">
       <h4 class="card-title"> {{ item.name }}</h4>
       <p class="card-text"> {{ item.reference }}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <button class="btn btn-primary" *ngIf="state.ALIVRER == item.state"
+      (click)="changeState(item, state.ALIVRER)">En Cours</button>
+      <button class="btn btn-primary" *ngIf="state.ENCOURS == item.state"
+      (click)="changeState(item, state.ENCOURS)">Livree</button>
     </div>
   </div>
