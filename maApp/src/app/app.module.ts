@@ -8,8 +8,12 @@ import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { ItemsModule } from './items/items.module';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CollectionService } from './core/service/collection/collection.service';
+
+import { AppRoutingModule } from './app-routing.module';
+import { environment } from '../environments/environment';
+import { RouterModule, Router } from '@angular/router';
 
 
 @NgModule({
@@ -18,9 +22,11 @@ import { CollectionService } from './core/service/collection/collection.service'
     CoreModule,
     SharedModule,
     HomeModule,
-    PageNotFoundModule,
     ItemsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AppRoutingModule,
+    RouterModule,
+    PageNotFoundModule
   ],
   declarations: [
     AppComponent
@@ -30,4 +36,10 @@ import { CollectionService } from './core/service/collection/collection.service'
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+constructor(router: Router) {
+    if (!environment.production) {
+      console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+    }
+  }
+}
